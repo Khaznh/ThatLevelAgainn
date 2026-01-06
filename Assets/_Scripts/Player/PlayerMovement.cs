@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 inputVec;
     private Rigidbody2D rid;
     private bool isFaceRight = true;
-    private bool isOnGround = false;
+    [SerializeField] private bool isOnGround = false;
 
     private void Awake()
     {
