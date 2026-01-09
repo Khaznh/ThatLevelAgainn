@@ -19,6 +19,12 @@ public class LevelManager : Singleton<LevelManager>
 
     public void SpawnLevel()
     {
+        if (currentLevel > maps.Count)
+        {
+            SceneMoveManager.Instance.MoveToMenuScene();
+            return;
+        }
+
         Instantiate(maps[currentLevel - 1], new Vector3(currentX, 0, 0), Quaternion.identity);
         currentX += mapLength;
         currentLevel++;
